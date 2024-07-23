@@ -3,14 +3,6 @@ const board = document.querySelector("[data-board]");
 
 let ifCircleTurn;
 
-const starGame = () => {
-    for(const cell of cellElements) {
-        cell.addEventListener('click', handleClick, { once: true });
-    }
-    ifCircleTurn = false;
-    board.classList.add('x');
-};
-
 const placeMark = (cell, classToAdd) => {
     cell.classList.add(classToAdd)
 };
@@ -38,4 +30,6 @@ const handleClick = (e) => {
     swapTurns();
 };
 
-startGame();
+for(const cell of cellElements) {
+    cell.addEventListener('click', handleClick, { once: true });
+}
